@@ -1,0 +1,39 @@
+# Arquivos de configuração
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.egg-info/
+dist/
+build/
+.vscode/
+.idea/
+*.sqlite3
+
+# Ambientes virtuais
+venv/
+env/
+
+# Arquivos de compilação
+*.class
+*.jar
+*.war
+*.ear
+*.pyc
+*.swp
+*.swo
+*.swn
+
+# Arquivos gerados pelo Django
+db.sqlite3
+media/
+static/
+
+# Tailwind CSS
+/node_modules/
+/dist/
+
+# Vue.js
+/dist/
+/node_modules/
+npm-debug.log

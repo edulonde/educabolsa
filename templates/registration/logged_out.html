@@ -1,0 +1,16 @@
+{% extends 'base_generic.html' %}
+
+{% block title %}
+<title>Logout</title>
+{% endblock %}
+
+
+{% block content %}
+
+<h1>Sessão encerrada</h1>
+
+<p>Obrigado por usar nosso sistema! Esperamos vê-lo novamente em breve.</p>
+
+<a href="{% url 'index' %}">Voltar para o Início.</a>
+
+{% endblock %}

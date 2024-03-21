@@ -1,0 +1,79 @@
+{% load static %}
+
+<div id="header"
+     class="flex items-center justify-between">
+
+    <!--    TOGGLE MENU BUTTON-->
+    <button
+            id="toggle-menu"
+            class=" px-1 py-0.5 text-sm rounded m-2"
+            @click="showMenu = !showMenu">
+
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#b5c3f4"
+             class="w-8 h-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+        </svg>
+
+    </button>
+
+
+    <!--    LOGO-->
+    <div id="logo" class="">
+        <a href="{% url 'index' %}">
+
+            <img src="{% static 'logo_educa_bolsa.png' %}"
+                 alt="Logo"
+                 class="inline-block w-16 my-1">
+        </a>
+    </div>
+
+    <!--    ACCOUNT MENU-->
+    <div id="account" class="relative">
+
+        {% if not user.is_authenticated %}
+        <a href="{% url 'login' %}">
+        <span
+                class="px-2 py-2 mr-2 bg-gray-900 text-white rounded hover:bg-gray-950 cursor-pointer">
+            Entrar</span>
+        </a>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+             class="w-8 h-8 cursor-pointer mr-2"
+             @click="toggleDropdownAccount()">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+        </svg>
+        <div v-if="showDropdownAccount"
+             class="dropdown-menu bg-white border rounded shadow-lg absolute z-10 right-0 mr-[-16px] w-32">
+            <ul>
+                <li>
+                    <a href="{% url 'my-account' %}"
+                       class="block px-4 py-2 hover:bg-gray-200 text-left w-full text-black">
+                        Minha Conta</a>
+                </li>
+
+                <li>
+                    <a href="{% url 'my-actions' %}"
+                       class="block px-4 py-2 hover:bg-gray-200 text-left w-full text-black">
+                        Minhas Ações</a>
+                </li>
+
+
+                <li>
+                    <form method="post" action="{% url 'logout' %}" id="logoutForm">
+                        {% csrf_token %}
+                        <button type="submit" class="block px-4 py-2 hover:bg-gray-200 text-left w-full text-black">
+                            Sair
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        {% endif %}
+
+    </div>
+
+
+</div>

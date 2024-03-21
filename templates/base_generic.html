@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <!--TITLE-->
+    {% block title %}
+    <title>Início</title>
+    {% endblock %}
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--FONTE-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+
+    <!--TAILWINDCSS-->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tailwind/output.css' %}"/>
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+
+    <!--FAVICON-->
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+    <!--VUEJS-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+
+
+</head>
+<body id="app"
+      class=" ">
+
+
+<div class="flex flex-col">
+
+
+    <!--HEADER-->
+    {% block header %}
+    {% include 'base/header.html' %}
+    {% endblock %}
+
+
+    <div class="flex flex-grow ">
+
+        <!--MENU-->
+        {% block sidebar %}
+        {% include 'base/menu.html' %}
+        {% endblock %}
+
+
+        <!--MAIN-->
+        <div id="main"
+             class="w-full">
+
+
+            <!--CONTENT-->
+            {% block content %}
+            {% endblock %}
+
+            <!--PAGINATION-->
+            {% block pagination %}
+            {% include 'base/pagination.html' %}
+            {% endblock %}
+        </div>
+
+    </div>
+
+    <!--FOOTER-->
+    {% block footer %}
+    {% include 'base/footer.html' %}
+    {% endblock %}
+
+</div>
+
+<!--SCRIPT-->
+<script src="{% static 'vue/main.js' %}"></script>
+
+</body>
+</html>
+

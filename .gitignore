@@ -40,3 +40,7 @@ npm-debug.log
 
 
 .env
+
+# Heroku
+.DS_Store
+/staticfiles/

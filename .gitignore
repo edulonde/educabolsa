@@ -27,7 +27,7 @@ env/
 # Arquivos gerados pelo Django
 db.sqlite3
 media/
-static/
+
 
 # Tailwind CSS
 /node_modules/

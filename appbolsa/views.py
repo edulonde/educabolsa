@@ -55,3 +55,24 @@ class MyAccountView(LoginRequiredMixin, generic.TemplateView):
         context = super().get_context_data(**kwargs)
         context['user'] = self.request.user
         return context
+
+def sobre(request):
+    return render(request, 'sobre.html')
+
+def conceitos_basicos(request):
+    return render(request, 'conceitos-basicos.html')
+
+def conceitos_intermediarios(request):
+    return render(request, 'conceitos-intermediarios.html')
+
+def conceitos_avancados(request):
+    return render(request, 'conceitos-avancados.html')
+
+def explorar_acoes(request):
+    return render(request, 'explorar-acoes.html')
+
+def explorar_moedas(request):
+    return render(request, 'explorar-moedas.html')
+
+def explorar_indices(request):
+    return render(request, 'explorar-indices.html')

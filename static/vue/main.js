@@ -2,8 +2,10 @@ const app = Vue.createApp({
     data() {
         return {
             showMenu: false,
+            showDropdownMenuConceitos: false,
             showDropdownAccount: false,
-            testevue: 'Teste Vue',
+
+
 
         }
     },

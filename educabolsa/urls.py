@@ -1,4 +1,3 @@
-
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import RedirectView
@@ -11,4 +10,5 @@ urlpatterns = [
                   path('', RedirectView.as_view(url='appbolsa/', permanent=True)),
                   path('accounts/', include('django.contrib.auth.urls')),
                   path('social-auth/', include('social_django.urls', namespace='social')),
+                  path("", include("allauth.urls")),  # most important
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

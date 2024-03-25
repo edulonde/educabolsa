@@ -1,1 +1,80 @@
 {% extends "base_generic.html" %}
+
+{% block title %}
+<title>Intermediários</title>
+{% endblock %}
+
+
+{% block content %}
+
+<h1 class="text-2xl text-center text-gray-900 my-2">Conceitos Básicos</h1>
+
+
+<h1 @click="showConceitosInter_01 =!showConceitosInter_01"
+    class="text-xl ml-2 text-gray-900 my-2 cursor-pointer hover:font-extrabold">
+    1. Estratégias de Investimento: </h1>
+<div v-if="showConceitosInter_01">
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">Diversificação e alocação de ativos:</h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">Diversificação envolve distribuir seus investimentos em diferentes tipos de ativos, como ações, títulos e commodities, para reduzir o risco de perdas. A alocação de ativos é a distribuição do seu capital entre diferentes classes de ativos, como ações, títulos e dinheiro, com base no seu perfil de risco e objetivos de investimento.</p>
+
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">Estratégias de investimento de longo prazo vs. curto prazo:</h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">Investir a longo prazo envolve comprar e manter ações por um período prolongado, muitas vezes anos, para aproveitar o potencial de crescimento das empresas e do mercado como um todo. Por outro lado, investir a curto prazo envolve comprar e vender ações com mais frequência, tentando capitalizar sobre movimentos de curto prazo no mercado.</p>
+
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">Investimento em setores específicos e tendências do mercado:</h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">Investir em setores específicos e tendências do mercado envolve identificar indústrias ou segmentos que apresentam potencial de crescimento no futuro e alocar capital nessas áreas. Isso pode incluir setores como tecnologia, saúde, energia renovável, entre outros, que estão em ascensão devido a mudanças sociais, tecnológicas ou econômicas.</p>
+
+
+    </ul>
+</div>
+
+
+<h1 @click="showConceitosInter_02 =!showConceitosInter_02"
+    class="text-xl ml-2 text-gray-900 my-2 cursor-pointer hover:font-extrabold">
+    2. Avaliação de Risco e Retorno: </h1>
+<div v-if="showConceitosInter_02">
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">Métricas de avaliação de risco:</h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">As métricas de avaliação de risco ajudam os investidores a entender e quantificar o risco associado a um investimento em ações. Isso inclui medidas como desvio padrão, que mede a volatilidade dos retornos de um investimento ao longo do tempo, e a relação risco/retorno, que compara o retorno esperado de um investimento com seu risco.</p>
+
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">Cálculo do índice beta de uma ação:</h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">O índice beta é uma medida de sensibilidade de uma ação em relação ao mercado como um todo. Um beta de 1 indica que a ação se move em linha com o mercado, enquanto um beta acima de 1 indica maior volatilidade e um beta abaixo de 1 indica menor volatilidade. O beta ajuda os investidores a entender como uma ação pode reagir às mudanças no mercado.</p>
+
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">Compreensão da fronteira eficiente de Markowitz:</h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">A fronteira eficiente de Markowitz é uma teoria que sugere a alocação ótima de ativos em uma carteira para maximizar o retorno esperado para um nível de risco dado, ou minimizar o risco para um nível de retorno dado. Ela ajuda os investidores a construir carteiras diversificadas que oferecem o melhor equilíbrio entre risco e retorno, considerando as correlações entre diferentes ativos.</p>
+
+
+</div>
+
+
+<h1 @click="showConceitosInter_03 =!showConceitosInter_03"
+    class="text-xl ml-2 text-gray-900 my-2 cursor-pointer hover:font-extrabold">
+    3. Gestão de Carteira: </h1>
+<div v-if="showConceitosInter_03">
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">Construção e manutenção de uma carteira de investimentos:</h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">A gestão de carteira envolve a seleção cuidadosa de ativos, como ações e outros instrumentos financeiros, com o objetivo de alcançar os objetivos financeiros do investidor. Isso inclui considerar fatores como perfil de risco, horizonte de investimento e objetivos financeiros pessoais ao escolher os ativos para incluir na carteira.</p>
+
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">Rebalanceamento da carteira:</h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">O rebalanceamento da carteira é o processo de ajustar periodicamente a alocação de ativos para manter o equilíbrio desejado entre risco e retorno. Isso pode envolver a venda de ativos que se valorizaram significativamente e a compra de ativos que estão subvalorizados, garantindo que a carteira permaneça alinhada com os objetivos de investimento ao longo do tempo.</p>
+
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">Importância da liquidez e diversificação:</h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">A liquidez refere-se à facilidade com que um ativo pode ser comprado ou vendido no mercado sem afetar significativamente seu preço. É importante garantir que a carteira inclua ativos líquidos o suficiente para atender às necessidades de curto prazo do investidor, como despesas inesperadas ou emergências. Além disso, a diversificação é crucial para reduzir o risco total da carteira, espalhando os investimentos por diferentes classes de ativos, setores e regiões geográficas.</p>
+    
+</div>
+
+
+<h1 @click="showConceitosInter_04 =!showConceitosInter_04"
+    class="text-xl ml-2 text-gray-900 my-2 cursor-pointer hover:font-extrabold">
+    4. Psicologia do Investimento: </h1>
+<div v-if="showConceitosInter_04">
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">Conhecimento dos vieses comportamentais:</h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">Os vieses comportamentais são tendências psicológicas que podem influenciar as decisões de investimento dos indivíduos, muitas vezes levando a escolhas subótimas. Alguns exemplos comuns incluem aversão à perda (tendência a evitar perdas a todo custo), viés de confirmação (tendência a buscar informações que confirmem nossas crenças preexistentes) e efeito manada (tendência a seguir o comportamento do grupo).</p>
+
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">Controle emocional e tomada de decisões racionais:</h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">O controle emocional é fundamental para os investidores, pois as emoções podem levar a decisões impulsivas e prejudiciais. É importante reconhecer e controlar sentimentos como ganância, medo e impaciência ao investir. Em vez disso, os investidores devem se esforçar para tomar decisões racionais e fundamentadas, baseadas em análises objetivas e metas de longo prazo.</p>
+
+   
+</div>
+
+
+
+
+{% endblock %}

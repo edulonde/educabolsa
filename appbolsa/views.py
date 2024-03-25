@@ -6,7 +6,7 @@ from django.views import generic
 from django.contrib.auth.signals import user_logged_in
 from django.dispatch import receiver
 from django.core.mail import send_mail
-
+from .forms import RespostasQuestionarioInicialForm
 
 def index(request):
     return render(request, 'index.html')
@@ -76,3 +76,18 @@ def explorar_moedas(request):
 
 def explorar_indices(request):
     return render(request, 'explorar-indices.html')
+
+def questionario(request):
+    if request.method == 'POST':
+        form = RespostasQuestionarioInicialForm(request.POST)
+        if form.is_valid():
+            form.instance.usuario = request.user
+            form.save()
+            return redirect('questionario-resposta')
+    else:
+        form = RespostasQuestionarioInicialForm()
+
+    return render(request, 'questionario.html', {'form': form})
+
+def questionario_resposta(request):
+    return render(request, 'questionario-resposta.html')

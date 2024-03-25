@@ -3,6 +3,9 @@ from django import forms
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.core.mail import send_mail
+from .models import RespostasQuestionarioInicial
+
+
 class NewUserForm(UserCreationForm):
     username = forms.CharField(label='username', min_length=3, max_length=150)
     email = forms.EmailField(label='email')
@@ -64,3 +67,18 @@ class NewUserForm(UserCreationForm):
         )
 
         return user
+
+
+class RespostasQuestionarioInicialForm(forms.ModelForm):
+    class Meta:
+        model = RespostasQuestionarioInicial
+        fields = ['pergunta1', 'pergunta2', 'pergunta3', 'pergunta4', 'pergunta5', 'pergunta6', 'pergunta7']
+        labels = {
+            'pergunta1': '1. Você se sente seguro para efetuar cálculos envolvendo matemática financeira?',
+            'pergunta2': '2. Na sua opinião, o conhecimento matemático pode ajudar a lidar melhor com o dinheiro?',
+            'pergunta3': '3. Qual o grau de importância que você atribuià Educação Financeira nas escolas?',
+            'pergunta4': '4. Como você organiza seus gastos?',
+            'pergunta5': '5. Você conhece a dinâmica da Bolsa de Valores de São Paulo [B3]?',
+            'pergunta6': '6. Se você tivesse dinheiro para investir, em qualdas alternativas adiante você investiria?',
+            'pergunta7': '7. Resolução de Problema: Suponha-se que você tenha um capital R$2.000,00 e pretende investir seu dinheiro numa Renda Fixa que rende 12% ao ano, pergunta-se: ao final de 30 meses qual será o valor do seu capital?',
+        }

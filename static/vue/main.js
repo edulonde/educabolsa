@@ -4,6 +4,12 @@ const app = Vue.createApp({
             showMenu: false,
             showDropdownMenuConceitos: false,
             showDropdownAccount: false,
+            showConceitosBasicos_01: false,
+            showConceitosBasicos_02: false,
+            showConceitosBasicos_03: false,
+            showConceitosBasicos_04: false,
+            showConceitosBasicos_05: false,
+
 
 
 

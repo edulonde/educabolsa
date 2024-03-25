@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'appbolsa',
     'social_django',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

@@ -1,45 +1,154 @@
 {% extends "base_generic.html" %}
 
+{% block title %}
+<title>Básicos</title>
+{% endblock %}
 
 {% block content %}
 
-<h1 class="text-xl ml-2 text-gray-900 my-2">1. Introdução aos Investimentos </h1>
+<h1 class="text-2xl text-center text-gray-900 my-2">Conceitos Básicos</h1>
 
-<h2 class="text-lg ml-5 text-gray-800 mb-1">Conceitos Básicos de Investimento:</h2>
-<p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">Investir é dedicar recursos financeiros a uma atividade
-    ou projeto com a expectativa de obter um retorno financeiro
-    no futuro. Os investimentos podem ser feitos em uma ampla variedade de ativos. O objetivo principal do investimento
-    é aumentar a riqueza ao longo do
-    tempo, seja por meio de ganhos de capital (valorização do investimento) ou rendimentos (como dividendos ou
-    juros).</p>
+<!-- 01 -->
+<h1 @click="showConceitosBasicos_01 =!showConceitosBasicos_01"
+    class="text-xl ml-2 text-gray-900 my-2 cursor-pointer hover:font-extrabold">
+    1. Introdução aos Investimentos </h1>
+<div v-if="showConceitosBasicos_01">
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">Conceitos Básicos de Investimento:</h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">Investir é dedicar recursos financeiros a uma
+        atividade
+        ou projeto com a expectativa de obter um retorno financeiro
+        no futuro. Os investimentos podem ser feitos em uma ampla variedade de ativos. O objetivo principal do
+        investimento
+        é aumentar a riqueza ao longo do
+        tempo, seja por meio de ganhos de capital (valorização do investimento) ou rendimentos (como dividendos ou
+        juros).</p>
 
-<h2 class="text-lg ml-5 text-gray-800 mb-1">Importância da Educação Financeira:</h2>
-<p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 "> Essencial para tomar decisões informadas e responsáveis
-    sobre dinheiro e investimentos. Ela
-    envolve o entendimento dos princípios básicos de gestão financeira, orçamento pessoal, planejamento para o futuro e
-    conhecimento dos diferentes produtos financeiros disponíveis. Com uma boa educação financeira, os investidores podem
-    evitar armadilhas, entender os riscos e maximizar as oportunidades de investimento.</p>
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">Importância da Educação Financeira:</h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 "> Essencial para tomar decisões informadas e
+        responsáveis
+        sobre dinheiro e investimentos. Ela
+        envolve o entendimento dos princípios básicos de gestão financeira, orçamento pessoal, planejamento para o
+        futuro e
+        conhecimento dos diferentes produtos financeiros disponíveis. Com uma boa educação financeira, os investidores
+        podem
+        evitar armadilhas, entender os riscos e maximizar as oportunidades de investimento.</p>
 
-<h2 class="text-lg ml-5 text-gray-800 mb-1">Diferentes Classes de Ativos:</h2>
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">Diferentes Classes de Ativos:</h2>
 
-<p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">Algumas das classes de ativos disponíveis são:
-</p>
-<ul class="ml-9 mr-3 mb-2 list-disc">
-    <li class="text-base  text-gray-700 "><strong>Ações:</strong> Representam a propriedade de uma empresa e oferecem
-        potencial de crescimento do capital e recebimento de
-        dividendos.
-    </li>
-    <li class="text-base  text-gray-700 "><strong>Títulos:</strong> São empréstimos feitos a governos ou empresas, que
-        pagam juros ao investidor. Podem incluir títulos do
-        governo, títulos corporativos e títulos municipais.
-    </li>
-    <li class="text-base  text-gray-700 "><strong>Fundos Mútuos:</strong> São pools de dinheiro investidos em uma
-        variedade de ativos, como ações, títulos e outros
-        instrumentos financeiros, gerenciados por profissionais.
-    </li>
-    <li class="text-base  text-gray-700 "><strong>Commodities:</strong> Incluem produtos básicos, como ouro, petróleo,
-        grãos e metais, negociados em mercados
-        específicos.
-    </li>
-</ul>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">Algumas das classes de ativos disponíveis são:
+    </p>
+    <ul class="ml-9 mr-3 mb-2 list-disc">
+        <li class="text-base  text-gray-700 "><strong>Ações:</strong> Representam a propriedade de uma empresa e
+            oferecem
+            potencial de crescimento do capital e recebimento de
+            dividendos.
+        </li>
+        <li class="text-base  text-gray-700 "><strong>Títulos:</strong> São empréstimos feitos a governos ou empresas,
+            que
+            pagam juros ao investidor. Podem incluir títulos do
+            governo, títulos corporativos e títulos municipais.
+        </li>
+        <li class="text-base  text-gray-700 "><strong>Fundos Mútuos:</strong> São pools de dinheiro investidos em uma
+            variedade de ativos, como ações, títulos e outros
+            instrumentos financeiros, gerenciados por profissionais.
+        </li>
+        <li class="text-base  text-gray-700 "><strong>Commodities:</strong> Incluem produtos básicos, como
+            ouro, petróleo,grãos e metais, negociados em mercados específicos.
+        </li>
+    </ul>
+</div>
+
+<!-- 02 -->
+<h1 @click="showConceitosBasicos_02 =!showConceitosBasicos_02"
+    class="text-xl ml-2 text-gray-900 my-2 cursor-pointer hover:font-extrabold">
+    2. Funcionamento da Bolsa de Valores </h1>
+<div v-if="showConceitosBasicos_02">
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">O que é a bolsa de valores:</h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">A bolsa de valores é um mercado organizado onde são negociados ativos financeiros, como ações, títulos e commodities. É um local virtual onde compradores e vendedores se encontram para realizar transações de compra e venda desses ativos.</p>
+
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">Como funciona o mercado de ações:</h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 ">No mercado de ações, as empresas emitem ações que representam partes do seu capital social. Essas ações são então negociadas na bolsa de valores, onde os investidores podem comprá-las e vendê-las. O preço das ações é determinado pela oferta e demanda, e pode variar ao longo do tempo com base em diversos fatores, como desempenho financeiro da empresa, condições econômicas e notícias do mercado.</p>
+
+    <h2 class="text-lg ml-5 text-gray-800 mb-1">Participantes do mercado:</h2>
+    <ul class="ml-9 mr-3 mb-2 list-disc">
+        <li class="text-base  text-gray-700 ">
+            <strong>Investidores individuais:</strong>São pessoas físicas que compram e vendem ações por conta própria, geralmente em busca de lucro ou para construir um patrimônio a longo prazo.</li>
+        <li class="text-base  text-gray-700 ">
+            <strong>Investidores institucionais: </strong>Incluem fundos de investimento, bancos, seguradoras e outros grandes players do mercado financeiro que negociam em grandes volumes em nome de seus clientes.</li>
+        <li class="text-base  text-gray-700 ">
+            <strong>Corretores:</strong> São intermediários que facilitam as transações entre compradores e vendedores na bolsa de valores. Eles executam as ordens de compra e venda em nome dos investidores e cobram uma comissão pelo serviço.</li>
+
+    </ul>
+</div>
+
+
+<h1 @click="showConceitosBasicos_03 =!showConceitosBasicos_03"
+    class="text-xl ml-2 text-gray-900 my-2 cursor-pointer hover:font-extrabold">
+     3. Riscos e Retornos</h1>
+<div v-if="showConceitosBasicos_03">
+    <h2 class="text-lg ml-5 text-gray-800 mb-1"></h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 "></p>
+
+    <h2 class="text-lg ml-5 text-gray-800 mb-1"></h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 "></p>
+
+    <h2 class="text-lg ml-5 text-gray-800 mb-1"></h2>
+    <ul class="ml-9 mr-3 mb-2 list-disc">
+        <li class="text-base  text-gray-700 ">
+            <strong></strong></li>
+        <li class="text-base  text-gray-700 ">
+            <strong></strong></li>
+        <li class="text-base  text-gray-700 ">
+            <strong></strong></li>
+        <li class="text-base  text-gray-700 ">
+            <strong></strong></li>
+    </ul>
+</div>
+
+<h1 @click="showConceitosBasicos_04 =!showConceitosBasicos_04"
+    class="text-xl ml-2 text-gray-900 my-2 cursor-pointer hover:font-extrabold">
+   4. Análise Fundamentalista Básica</h1>
+<div v-if="showConceitosBasicos_04">
+    <h2 class="text-lg ml-5 text-gray-800 mb-1"></h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 "></p>
+
+    <h2 class="text-lg ml-5 text-gray-800 mb-1"></h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 "></p>
+
+    <h2 class="text-lg ml-5 text-gray-800 mb-1"></h2>
+    <ul class="ml-9 mr-3 mb-2 list-disc">
+        <li class="text-base  text-gray-700 ">
+            <strong></strong></li>
+        <li class="text-base  text-gray-700 ">
+            <strong></strong></li>
+        <li class="text-base  text-gray-700 ">
+            <strong></strong></li>
+        <li class="text-base  text-gray-700 ">
+            <strong></strong></li>
+    </ul>
+</div>
+
+<h1 @click="showConceitosBasicos_05 =!showConceitosBasicos_05"
+    class="text-xl ml-2 text-gray-900 my-2 cursor-pointer hover:font-extrabold">
+    5. Análise Técnica Básica </h1>
+<div v-if="showConceitosBasicos_05">
+    <h2 class="text-lg ml-5 text-gray-800 mb-1"></h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 "></p>
+
+    <h2 class="text-lg ml-5 text-gray-800 mb-1"></h2>
+    <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 "></p>
+
+    <h2 class="text-lg ml-5 text-gray-800 mb-1"></h2>
+    <ul class="ml-9 mr-3 mb-2 list-disc">
+        <li class="text-base  text-gray-700 ">
+            <strong></strong></li>
+        <li class="text-base  text-gray-700 ">
+            <strong></strong></li>
+        <li class="text-base  text-gray-700 ">
+            <strong></strong></li>
+        <li class="text-base  text-gray-700 ">
+            <strong></strong></li>
+    </ul>
+</div>
+
 {% endblock %}

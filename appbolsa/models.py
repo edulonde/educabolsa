@@ -8,9 +8,9 @@ class RespostasQuestionarioInicial(models.Model):
         ('MM', 'Mais ou menos'),
         ('N', 'Não'),
     ]
-    pergunta1 = models.CharField(max_length=2, choices=PERGUNTA_CHOICES)
-    pergunta2 = models.CharField(max_length=2, choices=PERGUNTA_CHOICES)
-    pergunta3 = models.CharField(max_length=2, choices=PERGUNTA_CHOICES)
+    pergunta1 = models.CharField(max_length=2, choices=PERGUNTA_CHOICES, blank=False, null=False, )
+    pergunta2 = models.CharField(max_length=2, choices=PERGUNTA_CHOICES, blank=False, null=False, )
+    pergunta3 = models.CharField(max_length=2, choices=PERGUNTA_CHOICES, blank=False, null=False, )
 
     PERGUNTA4_CHOICES = [
         ('NA', 'Não organizo'),
@@ -19,8 +19,8 @@ class RespostasQuestionarioInicial(models.Model):
         ('RPM', 'Registro em planilhas todos os meus gastos mensais'),
         ('O', 'Outros'),
     ]
-    pergunta4 = models.CharField(max_length=3, choices=PERGUNTA4_CHOICES)
-    pergunta5 = models.CharField(max_length=2, choices=PERGUNTA_CHOICES)
+    pergunta4 = models.CharField(max_length=3, choices=PERGUNTA4_CHOICES, blank=False, null=False, )
+    pergunta5 = models.CharField(max_length=2, choices=PERGUNTA_CHOICES, blank=False, null=False, )
     PERGUNTA6_CHOICES = [
         ('DGNI', 'Deixaria guardado e não investiria, pois desconheço qualquer tipo de investimento'),
         ('IB', 'Investiria em bens (casa, carro, apartamento, etc.)'),
@@ -29,5 +29,5 @@ class RespostasQuestionarioInicial(models.Model):
         ('ITG', 'Investiria em títulos do governo, como títulos do Tesouro, mesmo com possíveis turbulências governamentais e/ou crise instalada no país'),
         ('IP', 'Investiria em poupança, mesmo rendendo a mesma taxa de inflação, pois priorizo a segurança em relação ao meu dinheiro'),
     ]
-    pergunta6 = models.CharField(max_length=4, choices=PERGUNTA6_CHOICES)
-    pergunta7 = models.TextField()
+    pergunta6 = models.CharField(max_length=4, choices=PERGUNTA6_CHOICES, blank=False, null=False, )
+    pergunta7 = models.TextField(max_length=500)

@@ -70,15 +70,29 @@ class NewUserForm(UserCreationForm):
 
 
 class RespostasQuestionarioInicialForm(forms.ModelForm):
+    pergunta1 = forms.ChoiceField(choices=RespostasQuestionarioInicial.PERGUNTA_CHOICES, widget=forms.RadioSelect,
+                                  initial='S', label='1. Você se sente seguro para efetuar cálculos envolvendo matemática financeira?')
+
+    pergunta2 = forms.ChoiceField(choices=RespostasQuestionarioInicial.PERGUNTA_CHOICES, widget=forms.RadioSelect,
+                                    initial='S', label='2. Na sua opinião, o conhecimento matemático pode ajudar a lidar melhor com o dinheiro?')
+
+    pergunta3 = forms.ChoiceField(choices=RespostasQuestionarioInicial.PERGUNTA_CHOICES, widget=forms.RadioSelect,
+                                    initial='S', label='3. Qual o grau de importância que você atribuià Educação Financeira nas escolas?')
+
+    pergunta4 = forms.ChoiceField(choices=RespostasQuestionarioInicial.PERGUNTA4_CHOICES, widget=forms.RadioSelect,
+                                    initial='NA', label='4. Como você organiza seus gastos?')
+
+    pergunta5 = forms.ChoiceField(choices=RespostasQuestionarioInicial.PERGUNTA_CHOICES, widget=forms.RadioSelect,
+                                    initial='S', label='5. Você conhece a dinâmica da Bolsa de Valores de São Paulo [B3]?')
+
+    pergunta6 = forms.ChoiceField(choices=RespostasQuestionarioInicial.PERGUNTA6_CHOICES, widget=forms.RadioSelect,
+                                    initial='DGNI', label='6. Se você tivesse dinheiro para investir, em qualdas alternativas adiante você investiria?')
+
+    pergunta7 = forms.CharField(widget=forms.TextInput(attrs={'size':'40'}), label='7. Resolução de Problema: Suponha-se que você tenha um capital R$2.000,00 e pretende investir seu dinheiro numa Renda Fixa que rende 12% ao ano, pergunta-se: ao final de 30 meses qual será o valor do seu capital?')
+
+
     class Meta:
         model = RespostasQuestionarioInicial
         fields = ['pergunta1', 'pergunta2', 'pergunta3', 'pergunta4', 'pergunta5', 'pergunta6', 'pergunta7']
-        labels = {
-            'pergunta1': '1. Você se sente seguro para efetuar cálculos envolvendo matemática financeira?',
-            'pergunta2': '2. Na sua opinião, o conhecimento matemático pode ajudar a lidar melhor com o dinheiro?',
-            'pergunta3': '3. Qual o grau de importância que você atribuià Educação Financeira nas escolas?',
-            'pergunta4': '4. Como você organiza seus gastos?',
-            'pergunta5': '5. Você conhece a dinâmica da Bolsa de Valores de São Paulo [B3]?',
-            'pergunta6': '6. Se você tivesse dinheiro para investir, em qualdas alternativas adiante você investiria?',
-            'pergunta7': '7. Resolução de Problema: Suponha-se que você tenha um capital R$2.000,00 e pretende investir seu dinheiro numa Renda Fixa que rende 12% ao ano, pergunta-se: ao final de 30 meses qual será o valor do seu capital?',
-        }
+
+

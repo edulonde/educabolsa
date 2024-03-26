@@ -4,6 +4,10 @@
 <title>Avançados</title>
 {% endblock %}
 
+{% block content %}
+
+<h1 class="text-2xl text-center text-gray-900 my-2">Conceitos Avançados</h1>
+
 <h1 @click="showConceitosAvanc_01 =!showConceitosAvanc_01"
     class="text-xl ml-2 text-gray-900 my-2 cursor-pointer hover:font-extrabold">
     1. Derivativos e Produtos Estruturados: </h1>
@@ -30,7 +34,7 @@
 
 <h1 @click="showConceitosAvanc_02 =!showConceitosAvanc_02"
     class="text-xl ml-2 text-gray-900 my-2 cursor-pointer hover:font-extrabold">
-    3. Fusões e Aquisições: </h1>
+    2. Análise Quantitativa: </h1>
 <div v-if="showConceitosAvanc_02">
     <h2 class="text-lg ml-5 text-gray-800 mb-1"></h2>
     <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 "></p>
@@ -38,23 +42,12 @@
     <h2 class="text-lg ml-5 text-gray-800 mb-1"></h2>
     <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 "></p>
 
-    <h2 class="text-lg ml-5 text-gray-800 mb-1"></h2>
-    <ul class="ml-9 mr-3 mb-2 list-disc">
-        <li class="text-base  text-gray-700 ">
-            <strong></strong></li>
-        <li class="text-base  text-gray-700 ">
-            <strong></strong></li>
-        <li class="text-base  text-gray-700 ">
-            <strong></strong></li>
-        <li class="text-base  text-gray-700 ">
-            <strong></strong></li>
-    </ul>
-</div>
 
+</div>
 
 <h1 @click="showConceitosAvanc_03 =!showConceitosAvanc_03"
     class="text-xl ml-2 text-gray-900 my-2 cursor-pointer hover:font-extrabold">
-    4. Investimento Internacional: </h1>
+    3. Fusões e Aquisições: </h1>
 <div v-if="showConceitosAvanc_03">
     <h2 class="text-lg ml-5 text-gray-800 mb-1"></h2>
     <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 "></p>
@@ -78,7 +71,7 @@
 
 <h1 @click="showConceitosAvanc_04 =!showConceitosAvanc_04"
     class="text-xl ml-2 text-gray-900 my-2 cursor-pointer hover:font-extrabold">
-    5. Análise Técnica Básica </h1>
+    4. Investimento Internacional: </h1>
 <div v-if="showConceitosAvanc_04">
     <h2 class="text-lg ml-5 text-gray-800 mb-1"></h2>
     <p class="text-base ml-5 mr-3 mb-2 text-justify text-gray-700 "></p>
@@ -98,3 +91,7 @@
             <strong></strong></li>
     </ul>
 </div>
+
+
+
+{% endblock %}

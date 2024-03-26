@@ -1,1 +1,61 @@
 {% extends "base_generic.html" %}
+
+{% block title %}
+<title>Sobre</title>
+{% endblock %}
+
+
+{% block content %}
+
+<h1 class="text-2xl text-center text-gray-900 my-2">Sobre</h1>
+
+<div class="ml-5 mr-3 text-gray-700">
+<p class="text-justify">Este aplicativo faz parte de uma disciplina Projeto Integrador de graduação da Universidade Virtual de São Paulo do eixo de Computação. Nosso tema foi desenvolver uma plataforma educacional utilizando tecnologias modernas, incluindo Django, Vue.js e
+    Tailwind CSS. Ele foi criado com o objetivo de fornecer um ambiente interativo e informativo para aqueles que
+    desejam aprender conceitos básicos de investimento em ações.</p>
+
+<h2 class="text-xl  text-gray-900 my-2">Funcionalidades Principais:</h2>
+<ol>
+    <li><strong>Aprendizado sobre Investimentos em Ações:</strong> Utilizamos uma API da bolsa de valores para fornecer
+        informações atualizadas sobre o mercado de ações, incluindo cotações de ações, gráficos de desempenho.
+    </li>
+    <li><strong>Questionário sobre Finanças:</strong> Oferecemos um questionário  sobre finanças pessoais,
+        ajudando os usuários a avaliar seu conhecimento e comportamento financeiro. As respostas fornecidas ajudam a
+        entender melhor o perfil do investidor.
+    </li>
+    <li><strong>Acesso a Dados Financeiros Diversificados:</strong> O aplicativo também
+        oferece acesso a dados de outras fontes importantes, como moedas estrangeiras, índices nacionais, taxas de juros
+        (SELIC) e inflação. Isso permite que os usuários tenham uma visão mais abrangente do cenário econômico e
+        financeiro.
+    </li>
+</ol>
+
+<h2 class="text-xl  text-gray-900 my-2">Tecnologias Utilizadas:</h2>
+<ul>
+    <li class="mb-1.5"><strong>Django:</strong> Utilizamos o framework Django para desenvolver o backend robusto e escalável do nosso
+        aplicativo. Ele nos permite gerenciar usuários, autenticação, banco de dados e integração de API de forma
+        eficiente.
+    </li>
+    <li class="mb-1.5"><strong>Vue.js:</strong> Empregamos o Vue.js para criar uma experiência de usuário dinâmica e interativa. Com o
+        Vue.js, podemos desenvolver interfaces de usuário responsivas que melhoram a
+        usabilidade do aplicativo.
+    </li>
+    <li class="mb-1.5"><strong>Tailwind CSS:</strong> Adotamos o Tailwind CSS para estilizar nossa aplicação de forma eficiente e
+        consistente. Com sua abordagem baseada em classes, podemos criar rapidamente estilos personalizados e garantir
+        uma aparência moderna e elegante para o aplicativo.
+    </li>
+</ul>
+
+<h2 class="text-xl  text-gray-900 my-2">Hospedagem e Deploy:</h2>
+<ul>
+    <li class="mb-1.5"><strong>GitHub:</strong> Todo o código-fonte do nosso aplicativo está hospedado no GitHub, proporcionando
+        transparência, colaboração e controle de versão eficiente.
+    </li>
+    <li class="mb-1.5"><strong>Heroku:</strong> Utilizamos a plataforma de hospedagem Heroku para fazer o deploy do nosso aplicativo de
+        forma simples e rápida. O Heroku oferece escalabilidade automática, facilidade de integração e gerenciamento
+        simplificado de aplicativos web.
+    </li>
+</ul>
+
+</div>
+{% endblock %}

@@ -63,12 +63,20 @@
                             Minhas Ações</a>
                     </li>
 
+                    {% if user.is_answered %}
+
+                    <li>
+                        <a href="{% url 'questionario-resposta' %}"
+                           class="block px-4 py-2 hover:bg-gray-200 text-left w-full text-gray-800">
+                            Resposta</a>
+                    {% else %}
                     <li>
                         <a href="{% url 'questionario' %}"
                            class="block px-4 py-2 hover:bg-gray-200 text-left w-full text-gray-800">
                             Questionário</a>
                     </li>
 
+                    {% endif %}
 
                     <li>
                         <form method="post" action="{% url 'logout' %}" id="logoutForm">

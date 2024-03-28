@@ -7,6 +7,8 @@ from django.contrib.auth.signals import user_logged_in
 from django.dispatch import receiver
 from django.core.mail import send_mail
 from .forms import RespostasQuestionarioInicialForm
+from .models import RespostasQuestionarioInicial
+
 
 def index(request):
     return render(request, 'index.html')
@@ -83,6 +85,8 @@ def questionario(request):
         if form.is_valid():
             form.instance.usuario = request.user
             form.save()
+            request.user.is_answered = True
+            request.user.save()
             return redirect('questionario-resposta')
     else:
         form = RespostasQuestionarioInicialForm()
@@ -90,4 +94,5 @@ def questionario(request):
     return render(request, 'questionario.html', {'form': form})
 
 def questionario_resposta(request):
-    return render(request, 'questionario-resposta.html')
+    respostas = RespostasQuestionarioInicial.objects.filter(usuario=request.user).last()
+    return render(request, 'questionario-resposta.html', {'respostas': respostas})

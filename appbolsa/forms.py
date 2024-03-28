@@ -3,7 +3,8 @@ from django import forms
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.core.mail import send_mail
-from .models import RespostasQuestionarioInicial
+from .models import RespostasQuestionarioInicial, CustomUser
+
 
 
 class NewUserForm(UserCreationForm):
@@ -14,16 +15,20 @@ class NewUserForm(UserCreationForm):
     first_name = forms.CharField(label='Primeiro nome', max_length=150)
     last_name = forms.CharField(label='Último nome', max_length=150)
 
+    class Meta:
+        model = CustomUser
+        fields = UserCreationForm.Meta.fields + ('first_name', 'last_name',)
+
     def username_clean(self):
         username = self.cleaned_data['username'].lower()
-        new = User.objects.filter(username=username)
+        new = CustomUser.objects.filter(username=username)
         if new.count():
             raise ValidationError("Usuário já cadastrado.")
         return username
 
     def email_clean(self):
         email = self.cleaned_data['email'].lower()
-        new = User.objects.filter(email=email)
+        new = CustomUser.objects.filter(email=email)
         if new.count():
             raise ValidationError("Email já cadastrado.")
         return email
@@ -45,7 +50,7 @@ class NewUserForm(UserCreationForm):
         return last_name
 
     def save(self, commit=True):
-        user = User.objects.create_user(
+        user = CustomUser.objects.create_user(
             self.cleaned_data['username'],
             self.cleaned_data['email'],
             self.cleaned_data['password1'],

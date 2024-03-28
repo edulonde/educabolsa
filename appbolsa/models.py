@@ -1,8 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser, Group, Permission
+from django.utils.translation import gettext_lazy as _
+from django.conf import settings
+
 
 class RespostasQuestionarioInicial(models.Model):
-    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     PERGUNTA_CHOICES = [
         ('S', 'Sim'),
         ('MM', 'Mais ou menos'),
@@ -31,3 +34,29 @@ class RespostasQuestionarioInicial(models.Model):
     ]
     pergunta6 = models.CharField(max_length=4, choices=PERGUNTA6_CHOICES, blank=False, null=False, )
     pergunta7 = models.TextField(max_length=500)
+
+
+class CustomUser(AbstractUser):
+    is_answered = models.BooleanField(default=False)
+
+    # Adicione related_name aos campos groups e user_permissions
+    groups = models.ManyToManyField(
+        Group,
+        verbose_name=_('groups'),
+        blank=True,
+        help_text=_(
+            'The groups this user belongs to. A user will get all permissions '
+            'granted to each of their groups.'
+        ),
+        related_name="customuser_set",
+        related_query_name="user",
+    )
+
+    user_permissions = models.ManyToManyField(
+        Permission,
+        verbose_name=_('user permissions'),
+        blank=True,
+        help_text=_('Specific permissions for this user.'),
+        related_name="customuser_set",
+        related_query_name="user",
+    )

@@ -29,7 +29,7 @@ class RespostasQuestionarioInicial(models.Model):
         ('IB', 'Investiria em bens (casa, carro, apartamento, etc.)'),
         ('IA', 'Investiria em ações, pela possibilidade de altos ganhos, mesmo sabendo do risco elevado de perdas'),
         ('IRF', 'Investiria em renda fixa de risco médio, porém com retornos acima da inflação'),
-        ('ITG', 'Investiria em títulos do governo, como títulos do Tesouro, mesmo com possíveis turbulências governamentais e/ou crise instalada no país'),
+        ('ITG', 'Investiria em títulos do governo, como títulos do Tesouro'),
         ('IP', 'Investiria em poupança, mesmo rendendo a mesma taxa de inflação, pois priorizo a segurança em relação ao meu dinheiro'),
     ]
     pergunta6 = models.CharField(max_length=4, choices=PERGUNTA6_CHOICES, blank=False, null=False, )

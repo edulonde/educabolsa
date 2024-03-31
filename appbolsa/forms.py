@@ -79,10 +79,10 @@ class RespostasQuestionarioInicialForm(forms.ModelForm):
                                   initial='S', label='1. Você se sente seguro para efetuar cálculos envolvendo matemática financeira?')
 
     pergunta2 = forms.ChoiceField(choices=RespostasQuestionarioInicial.PERGUNTA_CHOICES, widget=forms.RadioSelect,
-                                    initial='S', label='2. Na sua opinião, o conhecimento matemático pode ajudar a lidar melhor com o dinheiro?')
+                                    initial='S', label='2. Na sua opinião, o conhecimento matemático \n pode ajudar a lidar melhor com o dinheiro?')
 
     pergunta3 = forms.ChoiceField(choices=RespostasQuestionarioInicial.PERGUNTA_CHOICES, widget=forms.RadioSelect,
-                                    initial='S', label='3. Qual o grau de importância que você atribui à Educação Financeira nas escolas?')
+                                    initial='S', label='3. Qual o grau de importância que você \n atribui à Educação Financeira nas escolas?')
 
     pergunta4 = forms.ChoiceField(choices=RespostasQuestionarioInicial.PERGUNTA4_CHOICES, widget=forms.RadioSelect,
                                     initial='NA', label='4. Como você organiza seus gastos?')
@@ -91,9 +91,9 @@ class RespostasQuestionarioInicialForm(forms.ModelForm):
                                     initial='S', label='5. Você conhece a dinâmica da Bolsa de Valores de São Paulo [B3]?')
 
     pergunta6 = forms.ChoiceField(choices=RespostasQuestionarioInicial.PERGUNTA6_CHOICES, widget=forms.RadioSelect,
-                                    initial='DGNI', label='6. Se você tivesse dinheiro para investir, em qual das alternativas adiante você investiria?')
+                                    initial='DGNI', label='6. Se você tivesse dinheiro para investir, \n em qual das alternativas adiante você investiria?')
 
-    pergunta7 = forms.CharField(widget=forms.TextInput(attrs={'size':'40'}), label='7. Resolução de Problema: Suponha-se que você tenha um capital R$2.000,00 e pretende investir seu dinheiro numa Renda Fixa que rende 12% ao ano, pergunta-se: ao final de 30 meses qual será o valor do seu capital?')
+    pergunta7 = forms.CharField(widget=forms.TextInput(attrs={'size':'40'}), label='7. Resolução de Problema: Suponha-se que você tenha um capital R$2.000,00  \n e pretende investir seu dinheiro numa Renda Fixa que rende 12% ao ano, pergunta-se: \n ao final de 30 meses qual será o valor do seu capital?')
 
 
     class Meta:

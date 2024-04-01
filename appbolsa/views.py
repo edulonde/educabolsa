@@ -207,6 +207,13 @@ def explorar_indices(request):
     # Get the SELIC rate
     taxa_selic_atual = "{:.2f}".format(sgs.get(4189).iloc[-1, 0])
     taxa_selic_meta = "{:.2f}".format(sgs.get(432).iloc[-1, 0])
+    ipca_atual = "{:.2f}".format(sgs.get(433).iloc[-1, 0])
+    ipca_acumulado ="{:.2f}".format(sgs.get(13522).iloc[-1, 0])
 
     return render(request, 'explorar-indices.html',
-                  {'taxa_selic_atual': taxa_selic_atual, 'taxa_selic_meta': taxa_selic_meta})
+                  {'taxa_selic_atual': taxa_selic_atual,
+                   'taxa_selic_meta': taxa_selic_meta,
+                   'ipca_atual': ipca_atual,
+                   'ipca_acumulado': ipca_acumulado,
+
+                   })

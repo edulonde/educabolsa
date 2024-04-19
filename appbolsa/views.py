@@ -15,6 +15,7 @@ from .forms import RespostasQuestionarioInicialForm
 from .models import RespostasQuestionarioInicial
 import seaborn
 from bcb import sgs
+import yfinance as yf
 
 
 def index(request):
@@ -208,7 +209,7 @@ def explorar_indices(request):
     taxa_selic_atual = "{:.2f}".format(sgs.get(4189).iloc[-1, 0])
     taxa_selic_meta = "{:.2f}".format(sgs.get(432).iloc[-1, 0])
     ipca_atual = "{:.2f}".format(sgs.get(433).iloc[-1, 0])
-    ipca_acumulado ="{:.2f}".format(sgs.get(13522).iloc[-1, 0])
+    ipca_acumulado = "{:.2f}".format(sgs.get(13522).iloc[-1, 0])
 
     return render(request, 'explorar-indices.html',
                   {'taxa_selic_atual': taxa_selic_atual,
@@ -216,4 +217,23 @@ def explorar_indices(request):
                    'ipca_atual': ipca_atual,
                    'ipca_acumulado': ipca_acumulado,
 
+                   })
+
+
+def explorar_acoes(request):
+    ibovespa_data_day = yf.download("^BVSP", period="1d")
+    ibovespa_atual = "{:.2f}".format(ibovespa_data_day['Close'].iloc[-1])
+
+    ibovespa_data_year = yf.download("^BVSP", period="1y")
+    ibovespa_last_12_months = ibovespa_data_year[-252:]
+
+    ibovespa_max = "{:.2f}".format(ibovespa_last_12_months['Close'].max())
+
+    ibovespa_min = "{:.2f}".format(ibovespa_last_12_months['Close'].min())
+
+
+    return render(request, 'explorar-acoes.html',
+                  {'ibovespa_atual': ibovespa_atual,
+                   'ibovespa_max': ibovespa_max,
+                   'ibovespa_min': ibovespa_min
                    })
